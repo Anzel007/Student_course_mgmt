@@ -44,6 +44,8 @@ def StudentView(request):
         # ''
         # }
     return render(request,"student.html",{'student_data':student_data})
+def StudentAddView(request):
+    return()
 
 def CourseView(request):
     course_data=Course.objects.all()

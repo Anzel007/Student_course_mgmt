@@ -1,4 +1,10 @@
 {%extends 'base.html'%}
+{%block heading%}
+<header>
+          <h1>STUDENTS</h1>
+        </header>
+
+{%endblock%}   
 
 {%block content%}
 <h1>Student Information</h1>
@@ -15,7 +21,11 @@
         <tbody>
             
             {% for student in student_data %}
-                <tr>
+            {%if student.grade == '12'%}   
+            <tr style="background-color: green;">
+            {%else%}
+            <tr>
+            {%endif%}
                     <!-- <td>{{ student.student_id }}</td> -->
                     <td>{{student.student_name}}</td>
                     <td>{{student.grade}}</td>
@@ -33,4 +43,6 @@
             <!-- Add more rows for additional students -->
         </tbody>
     </table>
+    <!-- <button onclick="window.location.href='{% url 'form' %}';">Add New Student</button> -->
+
     {%endblock%}
