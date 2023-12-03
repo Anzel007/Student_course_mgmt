@@ -20,7 +20,7 @@ from main.views import HomeView,StudentView,CourseView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',HomeView),
+    path('',HomeView,name='Home'),
     path('student/',StudentView,name='student'),
     path('course/',CourseView,name='course')
 
