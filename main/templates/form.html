@@ -1,6 +1,10 @@
+{% extends "base.html" %}
+
 {%block content%}
 
-<form action="#" method="post">
+<form action="{% url 'student-add' %}" method="post">
+    {% csrf_token %}
+
     <label for="studentName">Student Name:</label>
     <input type="text" id="studentName" name="studentName" required>
 
@@ -24,6 +28,6 @@
     </select>
 
     <button type="submit">Add Student</button>
-{%endblock%}
 
 </form>
+{%endblock%}
